@@ -1,0 +1,14 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/And.hdl
+/**
+ * out = ((a == 1) & (b == 1)), 1, 0) 
+ */
+CHIP And {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+}
