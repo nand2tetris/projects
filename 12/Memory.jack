@@ -24,7 +24,7 @@ class Memory {
 
     /** Finds an available RAM block of the given size and returns
      *  a reference to its base address. */
-    function int alloc(int size) {
+    function Array alloc(int size) {
     }
 
     /** De-allocates the given object (cast as an array) by making
@@ -32,3 +32,4 @@ class Memory {
     function void deAlloc(Array o) {
     }    
 }
+
