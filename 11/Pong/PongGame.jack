@@ -1,20 +1,18 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/11/Pong/PongGame.jack
-
 /**
  * Represents a Pong game.
  */
 class PongGame {
 
-    static PongGame instance; // the singelton, a Pong game instance     
-    field Bat bat;            // the bat
-    field Ball ball;          // the ball
-    field int wall;           // the current wall that the ball is bouncing off of.
+    static PongGame instance; // A Pong game     
+    field Bat bat;            // bat
+    field Ball ball;          // ball
+    field int wall;           // current wall that the ball is bouncing off of
     field boolean exit;       // true when the game is over
-    field int score;          // the current score.
-    field int lastWall;       // the last wall that the ball bounced off of.
+    field int score;          // current score
+    field int lastWall;       // last wall that the ball bounced off of
 
     // The current width of the bat
     field int batWidth;
@@ -46,18 +44,18 @@ class PongGame {
         return;
     }
 
-    /** Creates an instance of Pong game, and stores it. */
+    /** Creates an instance of a Pong game. */
     function void newInstance() {
         let instance = PongGame.new();
         return;
     }
     
-    /** Returns the single instance of this Pong game. */
+    /** Returns this Pong game. */
     function PongGame getInstance() {
         return instance;
     }
 
-    /** Starts the game, and andles inputs from the user that control
+    /** Starts the game, and handles inputs from the user that control
      *  the bat's movement direction. */
     method void run() {
         var char key;
