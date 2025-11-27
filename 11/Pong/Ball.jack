@@ -1,19 +1,17 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/11/Pong/Ball.jack
-
 /**
- * A graphical ball. Characterized by a screen location and distance of 
- * last destination. Has methods for drawing, erasing and moving on the screen.
- * The ball is displayed as a filled, 6-by-6 pixles rectangle. 
+ * A graphical ball in a Pong game. Characterized by a screen location and 
+ * distance of last destination. Has methods for drawing, erasing and moving
+ * on the screen. The ball is displayed as a filled, 6-by-6 pixles rectangle. 
  */
 class Ball {
 
     field int x, y;               // the ball's screen location (in pixels)
     field int lengthx, lengthy;   // distance of last destination (in pixels)
 
-    field int d, straightD, diagonalD;            // used for straight line movement computation
+    field int d, straightD, diagonalD;   // used for straight line movement computation
     field boolean invert, positivex, positivey;   // (same)
    
     field int leftWall, rightWall, topWall, bottomWall;  // wall locations
@@ -99,7 +97,7 @@ class Ball {
     }
 
     /**
-     * Moves the ball one unit towards its destination.
+     * Moves the ball one step towards its destination.
      * If the ball has reached a wall, returns 0.
      * Else, returns a value according to the wall:
      * 1 (left wall), 2 (right wall), 3 (top wall), 4 (bottom wall).
@@ -161,7 +159,7 @@ class Ball {
     method void bounce(int bouncingDirection) {
         var int newx, newy, divLengthx, divLengthy, factor;
 
-	    // dividing by 10 first since results are too big
+	    // Since results are too big, divides by 10
         let divLengthx = lengthx / 10;
         let divLengthy = lengthy / 10;
 	    if (bouncingDirection = 0) { let factor = 10; }

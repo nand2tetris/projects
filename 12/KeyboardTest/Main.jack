@@ -1,7 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/12/KeyboardTest/Main.jack
 
 /** Test program for the OS Keyboard class. */
 class Main {
@@ -17,7 +16,7 @@ class Main {
         do Output.printString("keyPressed test:");
         do Output.println();
         while (~ok) {
-            do Output.printString("Please press the 'Page Down' key");
+            do Output.printString("Please press the 'space' key");
             while (key = 0) {
                 let key = Keyboard.keyPressed();
             }
@@ -28,7 +27,7 @@ class Main {
         
             do Output.println();
         
-            if (c = 137) {
+            if (c = 32) {
        	        do Output.printString("ok");
 	            do Output.println();
 	            let ok = true;

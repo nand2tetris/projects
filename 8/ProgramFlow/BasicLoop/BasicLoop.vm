@@ -1,0 +1,22 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+
+// Computes the sum 1 + 2 + ... + n and pushes the result onto
+// the stack. The value n is given in argument[0], which must be 
+// initialized by the caller of this code.
+
+	push constant 0    
+	pop local 0         // sum = 0
+label LOOP
+	push argument 0     
+	push local 0
+	add
+	pop local 0	        // sum = sum + n
+	push argument 0
+	push constant 1
+	sub
+	pop argument 0      // n--
+	push argument 0
+	if-goto LOOP        // if n > 0, goto LOOP
+	push local 0        // else, pushes sum to the stack's top

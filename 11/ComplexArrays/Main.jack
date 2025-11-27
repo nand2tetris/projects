@@ -1,8 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/11/ComplexArrays/Main.jack
-
 /**
  * Performs several complex array processing tests.
  * For each test, the expected result is printed, along with the
