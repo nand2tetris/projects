@@ -1,17 +1,16 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/09/List/List.jack
 
 /** Represents a linked list of integers. */
 class List {
-    field int data;          // a list consists of a data field,
-    field List next;         // followed by a list
+    field int data;          // an int value,
+    field List next;         // followed by a list of int values
 
     /* Creates a List. */
     constructor List new(int car, List cdr) {
-        let data = car;       // the identifiers car and cdr are used in 
-        let next = cdr;       // memory of the Lisp programming language
+        let data = car;      // the identifiers car and cdr are used in 
+        let next = cdr;      // memory of the Lisp programming language
         return this;
     }
 
@@ -21,8 +20,9 @@ class List {
 
     /** Prints this list. */
     method void print() {
-        var List current;    // initializes current to the first item
-        let current = this;  // of this list
+        // Sets current to the first element of this list
+        var List current;
+        let current = this;
         while (~(current = null)) {
             do Output.printInt(current.getData());
             do Output.printChar(32); // prints a space
@@ -31,12 +31,13 @@ class List {
         return;
     }
 
-    /** Disposes this List by recursively disposing its tail. */
+    /** Disposes this List. */
+    // By recursively disposing its tail.
     method void dispose() {
         if (~(next = null)) {
             do next.dispose();
         }
-        // Uses an OS routine to recycle this object.
+        // Calls an OS routine to free the memory of this object.
         do Memory.deAlloc(this);
         return;
     }

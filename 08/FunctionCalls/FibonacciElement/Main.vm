@@ -1,30 +1,30 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/08/FunctionCalls/FibonacciElement/Main.vm
+
+// Contains one function: Main.fibonacci.
 
 // Computes the n'th element of the Fibonacci series, recursively.
-// n is given in argument[0].  Called by the Sys.init function 
-// (part of the Sys.vm file), which also pushes the argument[0] 
-// parameter before this code starts running.
-
+// n is given in argument[0]. Called by the Sys.init function 
+// (part of the Sys.vm file), which sets argument[0] to an input
+// value and then calls Main.fibonacci.
 function Main.fibonacci 0
-push argument 0
-push constant 2
-lt                     // checks if n<2
-if-goto IF_TRUE
-goto IF_FALSE
-label IF_TRUE          // if n<2, return n
-push argument 0        
-return
-label IF_FALSE         // if n>=2, returns fib(n-2)+fib(n-1)
-push argument 0
-push constant 2
-sub
-call Main.fibonacci 1  // computes fib(n-2)
-push argument 0
-push constant 1
-sub
-call Main.fibonacci 1  // computes fib(n-1)
-add                    // returns fib(n-1) + fib(n-2)
-return
+	push argument 0
+	push constant 2
+	lt                     
+	if-goto N_LT_2        
+	goto N_GE_2
+label N_LT_2               // if n < 2 returns n
+	push argument 0        
+	return
+label N_GE_2               // if n >= 2 returns fib(n - 2) + fib(n - 1)
+	push argument 0
+	push constant 2
+	sub
+	call Main.fibonacci 1  // computes fib(n - 2)
+	push argument 0
+	push constant 1
+	sub
+	call Main.fibonacci 1  // computes fib(n - 1)
+	add                    // returns fib(n - 1) + fib(n - 2)
+	return

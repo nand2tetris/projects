@@ -1,12 +1,11 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/01/Mux16.tst
 
 load Mux16.hdl,
 output-file Mux16.out,
 compare-to Mux16.cmp,
-output-list a%B1.16.1 b%B1.16.1 sel%D2.1.2 out%B1.16.1;
+output-list a%B1.16.1 b%B1.16.1 sel out%B1.16.1;
 
 set a 0,
 set b 0,

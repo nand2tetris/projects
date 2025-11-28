@@ -1,12 +1,11 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/02/FullAdder.tst
 
 load FullAdder.hdl,
 output-file FullAdder.out,
 compare-to FullAdder.cmp,
-output-list a%B3.1.3 b%B3.1.3 c%B3.1.3 sum%B3.1.3 carry%B3.1.3;
+output-list a b c sum carry%B2.1.2;
 
 set a 0,
 set b 0,

@@ -1,7 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/02/Inc16.tst
 
 load Inc16.hdl,
 output-file Inc16.out,

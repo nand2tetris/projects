@@ -1,7 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/01/Or16.tst
 
 load Or16.hdl,
 output-file Or16.out,

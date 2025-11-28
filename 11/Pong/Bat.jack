@@ -1,23 +1,22 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/11/Pong/Bat.jack
-
 /**
- * A graphical Pong bat. 
- * Displayed as a filled horizontal rectangle that has 
- * a screen location, a width and a height.
- * Has methods for drawing, erasing, moving left and right, 
- * and changing its width (to make the hitting action more challenging).
- * This class should have been called "paddle", following the 
- * standard Pong terminology. But, unaware of this terminology,
- * we called it "bat", and then decided to stick to it. 
+ * A graphical bat in a Pong game. 
+ * Displayed as a filled horizontal rectangle that has a screen location,
+ * a width and a height.
+ * Has methods for drawing, erasing, moving left and right, and changing 
+ * its width (to make the hitting action more challenging).
+ * This class should have been called "Paddle", following the 
+ * standard Pong terminology. Unaware of this terminology,
+ * we called it "bat", and the name stuck. 
  */
 class Bat {
 
     field int x, y;           // the bat's screen location
     field int width, height;  // the bat's width and height
-    field int direction;      // direction of the bat's movement (1 = left, 2 = right)
+    field int direction;      // direction of the bat's movement
+                              //  (1 = left, 2 = right)
 
     /** Constructs a new bat with the given location and width. */
     constructor Bat new(int Ax, int Ay, int Awidth, int Aheight) {

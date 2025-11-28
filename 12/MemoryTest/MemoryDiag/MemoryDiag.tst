@@ -1,7 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/12/MemoryTest/MemoryDiag/MemoryDiag.tst
 
 echo "At the end of this test it is normal to see some pixels set on the screen";
 load,
