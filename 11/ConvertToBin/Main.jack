@@ -1,12 +1,10 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/11/ConvertToBin/Main.jack
-
 /**
  * Unpacks a 16-bit number into its binary representation:
  * Takes the 16-bit number stored in RAM[8000] and stores its individual 
- * bits in RAM[8001..8016] (each location will contain 0 or 1).
+ * bits in RAM[8001]..RAM[8016] (each location will contain 0 or 1).
  * Before the conversion, RAM[8001]..RAM[8016] are initialized to -1.
  * 
  * The program should be tested as follows:
@@ -15,7 +13,7 @@
  * 3) Switch to "no animation"
  * 4) Run the program (give it enough time to run)
  * 5) Stop the program
- * 6) Check that RAM[8001]..RAM[8016] contains the correct binary result, and
+ * 6) Check that RAM[8001]..RAM[8016] contain the correct bits, and
  *    that none of these memory locations contains -1.
  */
 class Main {
@@ -27,7 +25,7 @@ class Main {
     function void main() {
 	    var int value;
         do Main.fillMemory(8001, 16, -1); // sets RAM[8001]..RAM[8016] to -1
-        let value = Memory.peek(8000);    // reads a value from RAM[8000]
+        let value = Memory.peek(8000);    // Uses an OS routine to read the input
         do Main.convert(value);           // performs the conversion
         return;
     }
@@ -70,12 +68,12 @@ class Main {
     }
     
     /** Fills 'length' consecutive memory locations with 'value',
-      * starting at 'startAddress'. */
-    function void fillMemory(int startAddress, int length, int value) {
+      * starting at 'address'. */
+    function void fillMemory(int address, int length, int value) {
         while (length > 0) {
-            do Memory.poke(startAddress, value);
+            do Memory.poke(address, value);
             let length = length - 1;
-            let startAddress = startAddress + 1;
+            let address = address + 1;
         }
         return;
     }

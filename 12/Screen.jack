@@ -1,12 +1,10 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/12/Screen.jack
-
 /**
  * A library of functions for displaying graphics on the screen.
- * The Hack physical screen consists of 256 rows (indexed 0..255, top to bottom)
- * of 512 pixels each (indexed 0..511, left to right). The top left pixel on 
+ * The Hack physical screen consists of 512 rows (indexed 0..511, top to bottom)
+ * of 256 pixels each (indexed 0..255, left to right). The top left pixel on 
  * the screen is indexed (0,0).
  */
 class Screen {
@@ -33,7 +31,7 @@ class Screen {
     }
 
     /** Draws a filled rectangle whose top left corner is (x1, y1)
-     * and bottom right corner is (x2,y2), using the current color. */
+     *  and bottom right corner is (x2,y2), using the current color. */
     function void drawRectangle(int x1, int y1, int x2, int y2) {
     }
 

@@ -1,13 +1,15 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/08/FunctionCalls/SimpleFunction/SimpleFunctionVME.tst
+
+// Tests and illustrates SimpleFunction.vm in the VM emulator. 
+// Before executing the code, initializes the stack pointer
+// and the base addresses of some of the memory segments, 
+// and sets some values in the argument segment.
 
 load SimpleFunction.vm,
 output-file SimpleFunction.out,
 compare-to SimpleFunction.cmp,
-output-list RAM[0]%D1.6.1 RAM[1]%D1.6.1 RAM[2]%D1.6.1 
-            RAM[3]%D1.6.1 RAM[4]%D1.6.1 RAM[310]%D1.6.1;
 
 set sp 317,
 set local 317,
@@ -23,7 +25,10 @@ set argument[5] 3010,
 set argument[6] 4010,
 
 repeat 10 {
-  vmstep;
+	vmstep;
 }
 
+// Outputs SP, LCL, ARG, THIS, THAT, and the return value.
+output-list RAM[0]%D1.6.1 RAM[1]%D1.6.1 RAM[2]%D1.6.1 
+            RAM[3]%D1.6.1 RAM[4]%D1.6.1 RAM[310]%D1.6.1;
 output;

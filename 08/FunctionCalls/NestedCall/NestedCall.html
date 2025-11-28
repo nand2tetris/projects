@@ -27,14 +27,12 @@ NestedCall is implemented entirely within the Sys.vm file.  The first function i
 Sys.init().  This allows it to be used before the bootstrap code has been added to the VM Translator 
 since there will be no file processing order issues.
 <p>
-NestedCall loads NestedCall.asm, sets up the stack to simulate the bootstrap's call to Sys.init(), then 
-begins execution at the beginning of NestedCall.asm.  If the bootstrap is not present, the program begins 
+NestedCall loads Sys.asm, sets up the stack to simulate the bootstrap's call to Sys.init(), then 
+begins execution at the beginning of Sys.asm.  If the bootstrap is not present, the program begins 
 running with Sys.init() since it is the first function in Sys.vm.
 <p>
-If NestedCall.asm includes the bootstrap, the bootstrap will (re)initialize the stack and call Sys.init(), 
+If Sys.asm includes the bootstrap, the bootstrap will (re)initialize the stack and call Sys.init(), 
 so the test should see the same environment either way it gets to Sys.init().
-<p>
-The test setup also initializes the LCL, ARG, THIS and THAT pointers to -1, -2, -3 and -4.
 
 <h4>Sys.init()</h4>
 
@@ -44,7 +42,7 @@ Sys.init() calls Sys.main() and stores the return value in <span class="code">te
 return from a function with no arguments.
 
 <h4>Sys.main()</h4>
-Sys.main() allocates 5 local variables.  It sets <span class="code">local 1</span>, <span class="code">local 2</span> and 
+Sys.init() allocates 5 local variables.  It sets <span class="code">local 1</span>, <span class="code">local 2</span> and 
 <span class="code">local 3</span>.  <span class="code">local 0</span> and <span class="code">local 4</span> are intentionally not set. 
 <p> 
 <span class="code">THIS</span> and <span class="code">THAT</span> are changed so that context save and restore can be tested.

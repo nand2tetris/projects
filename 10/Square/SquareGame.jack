@@ -1,12 +1,8 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/10/Square/SquareGame.jack
-
-// (same as projects/09/Square/SquareGame.jack)
-
 /**
- * Implements the Square Dance game.
+ * Implements the Square game.
  * This simple game allows the user to move a black square around
  * the screen, and change the square's size during the movement.
  * When the game starts, a square of 30 by 30 pixels is shown at the
@@ -15,7 +11,6 @@
  * The 'z' and 'x' keys are used, respectively, to decrement and increment
  * the square's size. The 'q' key is used to quit the game.
  */
-
 class SquareGame {
    field Square square; // the square of this game
    field int direction; // the square's current direction: 

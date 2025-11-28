@@ -1,14 +1,14 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/06/rect/RectL.asm
 
 // Symbol-less version of the Rect.asm program.
+// Designed for testing the basic version of the assembler.
 
 @0
 D=M
 @23
-D;JLE
+D;JLE 
 @16
 M=D
 @16384

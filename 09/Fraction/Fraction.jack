@@ -1,7 +1,6 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/09/Fraction/Fraction.jack
 
 /** Represents the Fraction type and related operations. */
 class Fraction {
@@ -37,7 +36,7 @@ class Fraction {
       return Fraction.new(sum, denominator * other.getDenominator());
    }
 
-   // More fraction-related methods (minus, times, div, etc.) can be added here.
+   // More fraction-related methods (minus, times, div, invert, etc.) can be added here.
   
    /** Disposes this fraction. */
    method void dispose() {
