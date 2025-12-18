@@ -18,7 +18,7 @@ jobs:
       - name: Zip the project
         # This command zips 'projects.zip' and excludes unwanted paths
         run: |
-          zip -r projects.zip . -x "demo/*" ".gitignore" ".github/*"
+          zip -r projects.zip . -x "demo/*" ".gitignore" ".github/*" ".git/*"
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
