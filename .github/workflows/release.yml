@@ -17,9 +17,7 @@ jobs:
 
       - name: Zip the project
         run: |
-          mkdir projects
-          cp -r 00 01 02 03 04 05 06 07 08 09 10 11 12 13 README.md projects/
-          zip -r projects.zip projects
+          zip -r projects.zip projects README.md
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1
