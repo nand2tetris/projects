@@ -130,7 +130,7 @@ echo "Click the Keyboard icon and hold down the 'K' key (uppercase) until you se
 // the memory will zero itself before being outputted.
 
 while out <> 75 {
-    tick, tock,     // tick, tock prevents hang if sync. parts used in KB path.
+    tick, tock;     // tick, tock prevents hang if sync. parts used in KB path.
 }
 
 clear-echo,
@@ -184,7 +184,7 @@ echo "Make sure you see ONLY two horizontal lines in the middle of the screen. H
 // the memory will zero itself before being outputted.
 
 while out <> 89 {
-    tick, tock,     // tick, tock prevents hang if sync. parts used in KB path.
+    tick, tock;     // tick, tock prevents hang if sync. parts used in KB path.
 }
 
 clear-echo,
